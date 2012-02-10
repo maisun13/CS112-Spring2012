@@ -8,20 +8,31 @@ nums = input_nums()
 # 1. "nums" is a list of numbers entered from the command line.  How many
 #    numbers were entered?
 
-print "1.", __
+print "1.",
+
+print len (nums)
+listtotal = len (nums)
 
 # 2.  Append 3 and 5 to nums
 
-print "2.", nums
+print "2.", 
+
+nums.append (3)
+nums.append (5)
+print (nums)
 
 # 3.  Remove the last element from nums
 
-print "3.", nums
+print "3.", 
 
+nums.pop ()
 
 # 4.  Set the 3rd element to 7
 
-print "4.", nums
+print "4.", 
+
+nums[3]=7
+print nums
 
 
 # 5. [ADVANCED] Grab a new list of numbers and add it to the existing one
