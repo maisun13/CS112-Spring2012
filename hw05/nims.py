@@ -80,7 +80,7 @@ while (num_stones > 0):
             break
     
     except ValueError:	
-	print "Ooops. Please enter a valid number."
+	print "Ooopsie. Please enter a valid number."
 
 print "Thank you for playing!"
         if num_stones <= 0 :
