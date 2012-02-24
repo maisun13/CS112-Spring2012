@@ -2,6 +2,24 @@
 
 import math
 
+#The point to point function (ptop) measures the distance between a point and
+#another using four number unput by the user
+def ptop((x1, y1), (x2, y2)):
+    distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2 + (y2 - y1)**2)
+    return distance
+
+#Gets four number from user input
+x1 = int(raw_input("enter a number for x1: "))
+y1 = int(raw_input("enter a number for y1: "))
+x2 = int(raw_input("enter a number for x2: "))
+y2 = int(raw_input("enter a number for y2: "))
+
+#Prints the distance between the points
+print "the distance between those points is: ", ptop((x1, y1), (x2, y2))
+
+print "Thank you and Goodbye!"
+
+
 # Distance formula
 #   calculate a function called "distance" to calculate the distance between two points.
 #   http://www.purplemath.com/modules/distform.htm
