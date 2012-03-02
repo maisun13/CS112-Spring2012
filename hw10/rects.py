@@ -24,18 +24,24 @@ Terms:
   Rectangle:  pygame.Rect
 """
 
-from pygame import Rect
-
 # 1. poly_in_rect
 #      Check to see if the polygon is completely within a given 
 #      rectangle.
 #
 #      returns:  True or False
 
+import pygame
+from pygame.locals import *
+
 def poly_in_rect(poly, rect):
-    "check if polygon is within rectangle"
-
-
+    "checks if polygon is within rectangle"
+    
+    for point in poly:
+       if rect.collidepoint(point) != 1:
+           return True
+       else:
+           return False
+    
 
 # 2. surround_poly
 #      Create a rectangle which contains the given polygon.  
@@ -45,6 +51,21 @@ def poly_in_rect(poly, rect):
 #      returns:  pygame.Rect
 
 def surround_poly(poly):
-    "create a rectangle which surounds a polygon"
+    "creates a rectangle which surounds a polygon"
 
+    xmin, ymin = xmax, ymax = poly[0]
+    
+    if poly_in_rect == True:
 
+        for point in poly:
+            x, y = point
+            if x <= xmin:
+                xmin = x
+            if x >= xmax:
+                xmax = x
+            if y <= ymin:
+                ymin = y
+            if y >= ymax:
+                ymax = y
+
+    return Rect(xmin, ymin, (xmax - xmin + 1), (ymax - ymin + 1))
