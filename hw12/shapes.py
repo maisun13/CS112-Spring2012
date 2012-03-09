@@ -25,7 +25,7 @@ class Rectangle(Shape):
 
 class Square(Rectangle):
     def __init__(self, side):
-        Rectangle.__init__(self, w, h=w)
+        Rectangle.__init__(self, side, side)
 
 class Circle(Shape):
     def __init__(self, radius):
