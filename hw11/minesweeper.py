@@ -5,14 +5,14 @@ import pygame, random
 from pygame.locals import *
 
 
-GREY = 80,80,80
-WHITE = 150,150,150
-RED = 255,0,0
+GREY = 80, 80, 80
+WHITE = 150, 150, 150
+RED = 255, 0, 0
 GREEN = 0, 255, 0
-BLACK = 0,0,0
+BLACK = 0, 0, 0
 SCREEN_SIZE = SCREEN_WIDTH, SCREEN_HEIGHT = 600, 600
 FPS = 30
-SQ_SIZE = 60,60
+SQ_SIZE = 60, 60
 gameover = False
 win = False
 lose = False
@@ -145,7 +145,7 @@ while not done:
 
     # Clearing multiple spaces
         elif mines_near == 0:
-            safe = rect_grower(rect.topleft,rect.topright,rect.bottomleft,rect.bottomright)
+            safe = rect_grower(rect.topleft, rect.topright, rect.bottomleft, rect.bottomright)
             safes.extend(safe)
     for rect in rects:
         for safe in safes:
@@ -160,18 +160,18 @@ while not done:
     # If player wins
     if win == True:
         end = True
-        wintext = bigfont.render("YOU'RE A WINNER!", True, (0,0,0),GREEN)
+        wintext = bigfont.render("YOU'RE A WINNER!", True, (0, 0, 0), GREEN)
         locw = wintext.get_rect()
         locw.center = bounds.center
-        screen.blit(wintext,locw)
+        screen.blit(wintext, locw)
     
     # If player loses
     if lose == True:
         end = True
-        losetext = bigfont.render("YOU'RE A LOSER!", True, (0,0,0),GREEN)
+        losetext = bigfont.render("YOU'RE A LOSER!", True, (0, 0, 0), GREEN)
         locl = losetext.get_rect()
         locl.center = bounds.center
-        screen.blit(losetext,locl)
+        screen.blit(losetext, locl)
 
     # to refresh
     pygame.display.flip()

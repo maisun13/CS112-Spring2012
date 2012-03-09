@@ -1,57 +1,47 @@
-# Point Object
-# =====================================
-# Create a Point point class.  Point objects, when created, look like this:
-#     >>> pt = Point(3,4)
-#     >>> print pt.x
-#     3
-#     >>> print pt.y
-#     4
-#
-# In addition points have the following methods:
-#    distance(self, other):
-#        calculates the distance between this point and another
-#    
-#    move(self, x, y):
-#        sets the points location to x,y
-# 
-#    translate(self, x, y):
-#        offsets the point by x and y
-# 
-#    When all done, points should work like this:
-#
-#    >>> a = Point(0,0)
-#    >>> b = Point(0,0)
-#    >>> b.move(2, 2)
-#    >>> print b.x, b.y
-#    2 2
-#    >>> b.translate(1,2)
-#    >>> print b.x, b.y
-#    3 4
-#    >>> print a.distance(b)
-#    5
-#
+#!/usr/bin/env python
+import math 
+
+class Point(object):
+    # Initializes the code
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    # Calculates the distance between two points
+    def distance(self, other):
+        distance = math.sqrt((self.x - other.x)**2 + (self.y - other.y)**2)
+        return distance
+    # Sets the points location to x and y
+    def move(self, x, y):
+        self.x = self.x = x
+        self.y = self.y = y
+
+    # Offsets the point by x and y
+    def translate(self, x, y):
+        self.x = self.x + x
+        self.y = self.y + y
+        
+# Defines the two points      
+a = Point(1, 1)
+b = Point(2, 2)
+# Prints the location of the points
+print a.x, a.y
+print b.x, b.y
+# Prints the distance between the points a and b
+print a.distance(b)
+# Moves the points a and b to the specified point
+a.move(2, 2)
+b.move(1, 1)
+# Prints the new location of the points
+print a.x, a.y
+print b.x, b.y
+# Offsets the points by x and y
+a.translate(4, 4)
+b.translate(6, 6)
+# Prints the new location of the points
+print a.x, a.y
+print b.x, b.y
 
 
-# Advanced Section:
-# ---------------------------------------
-# Add the following function:
-#     slope(self, other):
-#         calculate the slope between two points
-#
-#     extrapolate(self, slope, distance):
-#         returns a point along the line defined by slope
-#         a given distance away
-#
-# Also, add the following special python methods:
-#     __eq__(self, other):
-#         checks if other is a Point and is equal to self
-#
-#     __str__(self):
-#         returns a string representation of the point 
-#     
-#     >>> print Point(3,4)
-#     (3,4)
-#     >>> a = Point(1,2)
-#     >>> b = Point(1,2)
-#     >>> print a == b
-#     True
+
+
+
